@@ -22,6 +22,7 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat.startActivity
 import com.example.babytimes.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding

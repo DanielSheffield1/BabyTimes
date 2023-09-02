@@ -34,4 +34,10 @@ class MainMenu : AppCompatActivity() {
         val intent = Intent(this,Diaper::class.java)
         startActivity(intent)
     }
+
+    //Click listener that will navigate to Diaper page when button (from layout) is clicked. Also requires activity entry in manifest
+    fun Settings (view: View) {
+        val intent = Intent(this,Settings::class.java)
+        startActivity(intent)
+    }
 }

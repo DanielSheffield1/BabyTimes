@@ -29,6 +29,8 @@
         <activity android:name=".Food"></activity>
         <activity android:name=".MainMenu"></activity>
         <activity android:name=".Sleep"></activity>
+        <activity android:name=".Settings"></activity>
+        <activity android:name=".CreateAccount"></activity>
     </application>
 
 </manifest>

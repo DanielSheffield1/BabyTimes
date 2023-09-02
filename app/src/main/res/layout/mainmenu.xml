@@ -71,6 +71,7 @@
         android:layout_height="120dp"
         android:layout_above="@+id/cribNavigation"
         android:layout_marginBottom="76dp"
+        android:onClick="Settings"
         app:srcCompat="@drawable/settings" />
 
 </RelativeLayout>
