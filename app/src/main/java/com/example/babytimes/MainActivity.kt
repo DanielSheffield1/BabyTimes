@@ -2,8 +2,9 @@
 Hello World!
 Add your name here so we know you can collaborate with the project successfully:
 
-Daniel Sheffield, Kyle Becker
-
+Daniel Sheffield
+Kiersten McWilliams
+Kyle Becker
  */
 
 
