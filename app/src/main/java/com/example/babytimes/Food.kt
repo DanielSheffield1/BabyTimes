@@ -17,6 +17,7 @@ class Food : AppCompatActivity() {
 
     }
 
+    //Click listener that will navigate to main menu when button (from layout) is clicked. Also requires activity entry in manifest
     fun MainMenu(view: View) {
         val intent = Intent(this, MainMenu::class.java)
         startActivity(intent)

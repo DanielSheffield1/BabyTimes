@@ -26,12 +26,14 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
+    //Click listener that will navigate to main menu when button (from layout) is clicked. Also requires activity entry in manifest
     fun MainMenu (view: View) {
         val intent = Intent(this,MainMenu::class.java)
         startActivity(intent)

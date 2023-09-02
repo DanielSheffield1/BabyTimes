@@ -17,14 +17,19 @@ class MainMenu : AppCompatActivity() {
 
     }
 
+    //Click listener that will navigate to Food page when button (from layout) is clicked. Also requires activity entry in manifest
     fun Food (view: View) {
         val intent = Intent(this,Food::class.java)
         startActivity(intent)
     }
+
+    //Click listener that will navigate to Sleep page when button (from layout) is clicked. Also requires activity entry in manifest
     fun Sleep (view: View) {
         val intent = Intent(this,Sleep::class.java)
         startActivity(intent)
     }
+
+    //Click listener that will navigate to Diaper page when button (from layout) is clicked. Also requires activity entry in manifest
     fun Diaper (view: View) {
         val intent = Intent(this,Diaper::class.java)
         startActivity(intent)
