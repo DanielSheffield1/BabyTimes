@@ -5,6 +5,7 @@ Add your name here so we know you can collaborate with the project successfully:
 Daniel Sheffield
 Kiersten McWilliams
 Kyle Becker
+Alexander Hays
  */
 
 
