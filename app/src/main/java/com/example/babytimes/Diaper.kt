@@ -1,16 +1,3 @@
-/*
-Hello World!
-Add your name here so we know you can collaborate with the project successfully:
-
-Daniel Sheffield
-Kiersten McWilliams
-Kyle Becker
-Alexander Hays
- */
-
-
-
-
 package com.example.babytimes
 
 import android.content.Intent;
@@ -19,17 +6,15 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
-import com.example.babytimes.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-
-    lateinit var binding: ActivityMainBinding
+class Diaper : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.diaper)
+
     }
 
     fun MainMenu (view: View) {
