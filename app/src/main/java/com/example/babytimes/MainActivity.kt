@@ -3,7 +3,6 @@ Hello World!
 Add your name here so we know you can collaborate with the project successfully:
 
 Daniel Sheffield
-test
 
  */
 
