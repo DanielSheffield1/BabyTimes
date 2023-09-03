@@ -11,14 +11,14 @@ import androidx.core.content.ContextCompat.startActivity;
 
 class CreateAccount  : AppCompatActivity() {
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.createAccount)
+        setContentView(R.layout.createaccount)
 
-        }
+    }
 
-        fun MainMenu(view: View) {
+    fun MainMenu (view: View) {
         val intent = Intent(this, MainMenu::class.java)
         startActivity(intent)
-        }
-        }
+    }
+}

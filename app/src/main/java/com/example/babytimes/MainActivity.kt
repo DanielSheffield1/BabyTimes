@@ -39,4 +39,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,MainMenu::class.java)
         startActivity(intent)
     }
+
+    //Click listener that will navigate to Create Account when button (from layout) is clicked. Also requires activity entry in manifest
+    fun CreateAccount (view: View) {
+        val intent = Intent(this,CreateAccount::class.java)
+        startActivity(intent)
+    }
 }
