@@ -70,6 +70,8 @@
         android:layout_width="156dp"
         android:layout_height="120dp"
         android:layout_above="@+id/cribNavigation"
+        android:layout_below="@+id/mainMenuTitle"
+        android:layout_marginTop="57dp"
         android:layout_marginBottom="76dp"
         android:clickable="true"
         android:onClick="Settings"
