@@ -16,7 +16,7 @@ import java.sql.Timestamp
 import java.time.LocalDateTime
 
 class CreateAccount  : AppCompatActivity() {
-    private val dbHelper = DatabaseHelper()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.createaccount)
@@ -37,12 +37,13 @@ class CreateAccount  : AppCompatActivity() {
     }
     // Create an instance of the DatabaseHelper class
 
-
+    private val dbHelper = DatabaseHelper()
     fun insertUser(firstName: String, lastName: String, createdDate: java.sql.Timestamp, isDeleted: Int, Password: String, Email: String) {
         val sql = "USE BabyTimes;" +
                 "INSERT INTO users (FirstName, LastName, CreatedDate, IsDeleted, Password, Email) VALUES (?, ?, ?, ?, ?, ?)"
 
         try {
+            Log.d("DatabaseHelper", "Attempting to insert user")
             val preparedStatement = dbHelper.connection.prepareStatement(sql)
 
             preparedStatement.setString(1, firstName)
@@ -65,9 +66,10 @@ class CreateAccount  : AppCompatActivity() {
             e.printStackTrace()
         } finally {
             dbHelper.closeConnection()
+            val intent = Intent(this, MainMenu::class.java)
+            startActivity(intent)
         }
-        //MainMenu()
-    }
 
+    }
 }
 

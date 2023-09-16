@@ -4,6 +4,15 @@ import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.SQLException
+import java.util.Properties
+import android.os.StrictMode
+import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import android.widget.Toast
+
+import java.sql.Statement
+
 
 class DatabaseHelper {
     internal var connection: Connection
@@ -11,11 +20,18 @@ class DatabaseHelper {
     init {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver")
-            /*adb.us-phoenix-1.oraclecloud.com is the database URL, 1522 is the port, gb844b0764eec32_babytimes_medium.adb.oraclecloud.com is the service name.*/
-            val url = "jdbc:oracle:thin:@adb.us-phoenix-1.oraclecloud.com:1522/gb844b0764eec32_babytimes_medium.adb.oraclecloud.com"
-            val username = "ADMIN"
-            val password = "ift402Babytimes"
-            connection = DriverManager.getConnection(url, username, password)
+
+            // Specify the wallet location
+            val walletLocation = "/wallet"
+
+            // Set up connection properties
+            val properties = Properties()
+            properties.setProperty("user", "ADMIN")
+            properties.setProperty("password", "ift402Babytimes")
+            properties.setProperty("oracle.net.wallet_location", "(SOURCE=(METHOD=file)(METHOD_DATA=(DIRECTORY=$walletLocation)))")
+
+            // Establish the connection
+            connection = DriverManager.getConnection("jdbc:oracle:thin:@(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.us-phoenix-1.oraclecloud.com))(connect_data=(service_name=gb844b0764eec32_babytimes_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))", properties)
         } catch (e: ClassNotFoundException) {
             throw SQLException("Oracle JDBC driver not found.")
         } catch (e: SQLException) {
