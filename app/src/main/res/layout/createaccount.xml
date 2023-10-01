@@ -29,7 +29,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="90dp"
         android:clickable="true"
-        android:onClick="MainMenu"
+        android:onClick="NewUser"
         android:text="Register"
         android:textAlignment="center"
         android:textColor="#3B206C"

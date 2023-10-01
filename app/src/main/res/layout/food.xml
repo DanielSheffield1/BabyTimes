@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Food"
-    android:background="@drawable/backgrnd">
+    android:background="@drawable/backgrnd_food"
+    tools:context=".Food">
 
 
     <TextView
@@ -28,11 +28,94 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="543dp"
+        android:layout_marginTop="542dp"
         android:layout_marginEnd="305dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:onClick="MainMenu"
-        android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+        android:src="@drawable/ic_baseline_arrow_circle_left_white" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Amount in oz"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="47dp"
+        android:layout_toStartOf="@+id/editTextNumber"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Amount"
+        android:clickable="false"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextTime4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:hint="Time of feeding"
+        android:inputType="time"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextText"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toStartOf="@+id/editTextTime4"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Time"
+        android:textAlignment="center"
+        android:clickable="false"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextText"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="46dp"
+        android:layout_toStartOf="@+id/editTextTime4"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Type"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="0dp"
+        android:text="Submit Data" />
 
 </RelativeLayout>

@@ -33,7 +33,7 @@ class CreateAccount  : AppCompatActivity() {
         Log.d("CreateAccount", "NewUser function called")
         val currentDateTime = LocalDateTime.now()
         val timestamp = Timestamp.valueOf(currentDateTime.toString()) // Convert LocalDateTime to a Timestamp
-        insertUser("John", "Doe", timestamp, 0, "p@ssword", "jdoe@asu.edu")
+        insertUser("Jane", "Doe", timestamp, 0, "p@ssword", "jadoe@asu.edu")
     }
     // Create an instance of the DatabaseHelper class
 
