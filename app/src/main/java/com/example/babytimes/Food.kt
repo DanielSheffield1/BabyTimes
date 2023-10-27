@@ -2,12 +2,15 @@ package com.example.babytimes
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
+import android.view.LayoutInflater
+import android.widget.ArrayAdapter
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.example.babytimes.databinding.FoodBinding
+
 
 class Food : AppCompatActivity() {
 
@@ -22,4 +25,19 @@ class Food : AppCompatActivity() {
         val intent = Intent(this, MainMenu::class.java)
         startActivity(intent)
     }
+
+    private var binding: FoodBinding? = null
+    private val binding get() = binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?
+        savedInstanceState: Bundle?,
+    ): View {
+        binding = FoodBinding.inflate(inflater, container, attachToParent: false)
+
+        val food = resources.getStringArray(R.array.select)
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, food)
+        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+    }
+
 }
