@@ -2,15 +2,10 @@ package com.example.babytimes
 
 import android.content.Intent;
 import android.view.View;
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.view.LayoutInflater
 import android.widget.ArrayAdapter
-import androidx.core.content.ContentProviderCompat.requireContext
-import com.example.babytimes.databinding.FoodBinding
-
+import android.widget.AutoCompleteTextView
+import android.os.Bundle;
 
 class Food : AppCompatActivity() {
 
@@ -18,26 +13,21 @@ class Food : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.food)
 
+        //Reference String Array
+        val type = resources.getStringArray(R.array.Type)
+        //pass parameter
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_food, type)
+        //Reference autocomplete text view
+        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.auto_complete_txt)
+        //set autocompleteTV to arrayAdapter
+        autocompleteTV.setAdapter(arrayAdapter)
+
     }
 
     //Click listener that will navigate to main menu when button (from layout) is clicked. Also requires activity entry in manifest
     fun MainMenu(view: View) {
         val intent = Intent(this, MainMenu::class.java)
         startActivity(intent)
-    }
-
-    private var binding: FoodBinding? = null
-    private val binding get() = binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?
-        savedInstanceState: Bundle?,
-    ): View {
-        binding = FoodBinding.inflate(inflater, container, attachToParent: false)
-
-        val food = resources.getStringArray(R.array.select)
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_items, food)
-        binding.autoCompleteTextView.setAdapter(arrayAdapter)
     }
 
 }

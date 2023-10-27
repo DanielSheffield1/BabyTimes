@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">BabyTimes</string>
-    <string-array name="select">Food Type
-        <items>Vegetables</items>
-        <items>Fruits</items>
-        <items>Meat/Fish</items>
-        <items>Grains</items>
-        <items>Dairy</items>
+    <string name="app_name">BabyTimes</string
+    <string name="select">Select Item</string
+    <string-array name="Type">
+        <item>Vegetable</item>
+        <item>Fruit</item>
+        <item>Meat/Fish</item>
+        <item>Grain</item>
+        <item>Dairy</item>
     </string-array>
+
+
 
 
 </resources>
