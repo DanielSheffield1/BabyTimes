@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyTimes"
         tools:targetApi="31">
+        <activity android:name=".UpdateActivity"
+            android:parentActivityName=".CreateAccount"/>
+        <activity
+            android:name=".AddUserActivity"
+            android:exported="false"
+            android:label="Add User"
+            android:parentActivityName=".CreateAccount">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -27,12 +36,23 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".Diaper"></activity>
-        <activity android:name=".Food"></activity>
-        <activity android:name=".MainMenu"></activity>
-        <activity android:name=".Sleep"></activity>
-        <activity android:name=".Settings"></activity>
-        <activity android:name=".CreateAccount"></activity>
+        <activity
+            android:name=".Diaper"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".Food"
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".MainMenu" />
+        <activity
+            android:name=".Sleep"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".Settings"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".CreateAccount"
+            android:label="Add User"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
