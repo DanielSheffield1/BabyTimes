@@ -51,4 +51,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation files('libs/ojdbc8.jar')
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

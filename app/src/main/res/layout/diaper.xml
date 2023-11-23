@@ -21,21 +21,6 @@
         android:textSize="34sp" />
 
 
-    <ImageView
-        android:id="@+id/returnToMainMenu"
-        android:layout_width="96dp"
-        android:layout_height="97dp"
-        android:layout_below="@+id/diaperTitle"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="518dp"
-        android:layout_marginEnd="305dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="true"
-        android:onClick="MainMenu"
-        android:src="@drawable/ic_baseline_arrow_circle_left_white" />
-
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="162dp"

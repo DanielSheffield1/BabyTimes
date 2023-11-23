@@ -8,6 +8,18 @@
     tools:context=".Settings">
 
 
+    <EditText
+        android:id="@+id/editTextText9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Clear Sleep Data" />
+
     <TextView
         android:id="@+id/diaperTitle"
         android:layout_width="match_parent"
@@ -20,19 +32,96 @@
         android:textColor="#3B206C"
         android:textSize="34sp" />
 
-    <ImageView
-        android:id="@+id/returnToMainMenu"
-        android:layout_width="96dp"
-        android:layout_height="97dp"
-        android:layout_below="@+id/diaperTitle"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="425dp"
+        android:onClick="CreateAccount"
+        android:text="User Details" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="400dp"
+        android:layout_toStartOf="@+id/button2"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:gravity="start|top"
+        android:text="To create a new user or update current user's login information click the user details button" />
+
+    <EditText
+        android:id="@+id/editTextText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="300dp"
+        android:ems="10"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="text"
+        android:text="Clear Food Data" />
+
+    <EditText
+        android:id="@+id/editTextText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        android:ems="10"
+        android:clickable="false"
+        android:editable="false"
+        android:inputType="text"
+        android:text="Clear Diaper Data" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="100dp"
+        android:text="Sleep" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="200dp"
+        android:text="Diaper" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="300dp"
+        android:text="Food" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="543dp"
-        android:layout_marginEnd="305dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="true"
-        android:onClick="MainMenu"
-        android:src="@drawable/ic_baseline_arrow_circle_left_24" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="LogOut"
+        android:text="Log Out" />
 
 </RelativeLayout>

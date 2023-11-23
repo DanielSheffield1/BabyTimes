@@ -23,4 +23,14 @@ class Settings : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun CreateAccount (view: View) {
+        val intent = Intent(this,CreateAccount::class.java)
+        startActivity(intent)
+    }
+
+    fun LogOut (view: View) {
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+    }
+
 }

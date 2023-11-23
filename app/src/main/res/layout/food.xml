@@ -20,21 +20,6 @@
         android:textColor="#3B206C"
         android:textSize="34sp" />
 
-    <ImageView
-        android:id="@+id/returnToMainMenu"
-        android:layout_width="96dp"
-        android:layout_height="97dp"
-        android:layout_below="@+id/foodTitle"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="542dp"
-        android:layout_marginEnd="305dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="true"
-        android:onClick="MainMenu"
-        android:src="@drawable/ic_baseline_arrow_circle_left_white" />
-
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="wrap_content"
@@ -117,10 +102,11 @@
         android:layout_marginEnd="145dp"
         android:layout_marginBottom="0dp"
         android:text="Submit Data" />
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="false"
         tools:context=".Food">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -129,9 +115,9 @@
             android:layout_height="45dp"
             android:layout_margin="16dp"
             android:hint="@string/select"
+            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="183dp"
-            tools:layout_editor_absoluteY="668dp"
-            tools:ignore="MissingConstraints">
+            tools:layout_editor_absoluteY="668dp">
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,8 +140,6 @@
             tools:textStyle="bold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </RelativeLayout>

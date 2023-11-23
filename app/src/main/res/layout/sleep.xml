@@ -20,28 +20,13 @@
         android:textColor="#3B206C"
         android:textSize="34sp" />
 
-    <ImageView
-        android:id="@+id/returnToMainMenu"
-        android:layout_width="96dp"
-        android:layout_height="97dp"
-        android:layout_below="@+id/sleepTitle"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="515dp"
-        android:layout_marginEnd="312dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="true"
-        android:onClick="mainMenu"
-        android:src="@drawable/ic_baseline_arrow_circle_left_white" />
-
     <EditText
         android:id="@+id/editTextTime2"
         android:layout_width="194dp"
         android:layout_height="68dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="1dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="63dp"
         android:ems="10"
         android:hint="Wake up time"
@@ -51,10 +36,10 @@
     <EditText
         android:id="@+id/editTextTime3"
         android:layout_width="196dp"
-        android:layout_height="66dp"
+        android:layout_height="68dp"
         android:layout_above="@+id/editTextTime2"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="-3dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="1dp"
         android:ems="10"
         android:hint="Time put down"
@@ -63,15 +48,17 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
-        android:layout_width="111dp"
+        android:layout_width="94dp"
         android:layout_height="68dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="63dp"
+        android:layout_above="@+id/editTextTextMultiLine2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
         android:layout_toStartOf="@+id/editTextTime3"
         android:clickable="false"
+        android:editable="false"
         android:ems="10"
-        android:gravity="start|top"
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:text="Time
@@ -82,13 +69,16 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="111dp"
+        android:layout_width="98dp"
         android:layout_height="68dp"
-        android:layout_above="@+id/editTextTextMultiLine"
-        android:layout_marginEnd="-1dp"
-        android:layout_marginBottom="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="63dp"
         android:layout_toStartOf="@+id/editTextTime2"
         android:clickable="false"
+        android:editable="false"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -105,8 +95,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="127dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="8dp"
         android:text="Submit Data" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/sleepChart"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_above="@+id/editTextTextMultiLine"
+        android:layout_marginBottom="19dp" />
+
 
 </RelativeLayout>
