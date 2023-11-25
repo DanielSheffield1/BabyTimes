@@ -44,19 +44,14 @@ class Sleep : AppCompatActivity() {
 
     }
     fun addSleepData(view: View?) {
+        //accepts user input and subtracts TimeAsleep from TimeWakeUp
         timeAsleep = findViewById(R.id.editTextTime3)
         timeWakeUp = findViewById(R.id.editTextTime2)
         var numAsleep = timeAsleep.text.toString().toFloat()
         var numWakeUp = timeWakeUp.text.toString().toFloat()
         val result = numWakeUp - numAsleep
-
         fridayHrs = fridayHrs.plus(result)
-        /*//old check to see if accepting edit text and performing arithmetic was working correctly
-        val myToast =
-            Toast.makeText(applicationContext, "fridayHrs = " + fridayHrs.toString(), Toast.LENGTH_SHORT)
-        myToast.setGravity(Gravity.LEFT, 200, 200)
-        myToast.show()*/
-        //redisplay the bar chart with the added sleep time
+        //Call getBarChartData to update the chart
         getBarChartData(fridayHrs)
     }
     //Click listener that will navigate to main menu page when button (from layout) is clicked. Also requires activity entry in manifest
@@ -66,7 +61,11 @@ class Sleep : AppCompatActivity() {
     }
 
     private fun getBarChartData(temp: Double) {
+    // creates/ updates the bar chart
 
+        //populate the bar chart with sample data
+        //monday-friday variables represent the x-values in the chart
+        //mondayHrs-firdayHrs represent the y-values in the chart
         val monday = 1
         val tuesday = 2
         val wednesday = 3
@@ -79,27 +78,36 @@ class Sleep : AppCompatActivity() {
 
         barEntriesList = ArrayList()
 
-        // on below line we are adding data
-        // to our bar entries list
+        // The bar chart we are importing from github does not support replacing values.
+        //Therefore, if the chart has already been created, we'll all its values
+        //before repopulating the chart below
         if (notEmpty)
         {
     barDataSet.removeLast()
             barDataSet.removeLast()
+            barDataSet.removeLast()
+            barDataSet.removeLast()
+            barDataSet.removeLast()
+            barDataSet.removeLast()
+            /*Toast to show the calculated latest y-value from the entry
             val myToast =
                 Toast.makeText(applicationContext, "temp = " + temp.toString(), Toast.LENGTH_SHORT)
             myToast.setGravity(Gravity.LEFT, 200, 200)
-            myToast.show()
+            myToast.show()*/
             barData.notifyDataChanged();
             barChart.notifyDataSetChanged();
             barChart.invalidate();
         }
+
+        //populate the bar graph with monday-friday values
         barEntriesList.add(BarEntry(monday.toFloat(), mondayHrs.toFloat()))
         barEntriesList.add(BarEntry(tuesday.toFloat(), tuesdayHrs.toFloat()))
         barEntriesList.add(BarEntry(wednesday.toFloat(), wednesdayHrs.toFloat()))
         barEntriesList.add(BarEntry(thursday.toFloat(), thursdayHrs.toFloat()))
+        //temp holds the difference between the two user-inputted values
         barEntriesList.add(BarEntry(friday.toFloat(), temp.toFloat()))
 
-
+    //some settings for the bar chart
         barChart = findViewById(R.id.sleepChart)
         barDataSet = BarDataSet(barEntriesList, "Hours of Sleep")
         barData = BarData(barDataSet)
