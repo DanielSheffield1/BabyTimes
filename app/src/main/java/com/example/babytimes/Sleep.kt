@@ -23,6 +23,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
 
 
+
 class Sleep : AppCompatActivity() {
 
     lateinit var barChart: BarChart
@@ -46,12 +47,17 @@ class Sleep : AppCompatActivity() {
     }
     fun addSleepData(view: View?) {
         //accepts user input and subtracts TimeAsleep from TimeWakeUp
+        //set input values to timeAsleep and timeWakeUp variables
         timeAsleep = findViewById(R.id.editTextTime3)
         timeWakeUp = findViewById(R.id.editTextTime2)
+        //only perform operation if the input fields are not empty
         if (!TextUtils.isEmpty(timeAsleep.getText()) && !TextUtils.isEmpty(timeWakeUp.getText())) {
+            //convert input to Float values
             var numAsleep = timeAsleep.text.toString().toFloat()
             var numWakeUp = timeWakeUp.text.toString().toFloat()
+            //calculate number of hours asleep
             val result = numWakeUp - numAsleep
+            //add the number of hours asleep to the previous total for that day
             fridayHrs = fridayHrs.plus(result)
             //Call getBarChartData to update the chart
             getBarChartData(fridayHrs)
