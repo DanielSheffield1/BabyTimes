@@ -88,7 +88,7 @@ class Sleep : AppCompatActivity() {
         barEntriesList = ArrayList()
 
         // The bar chart we are importing from github does not support replacing values.
-        //Therefore, if the chart has already been created, we'll all its values
+        //Therefore, if the chart has already been created, we'll remove all its values
         //before repopulating the chart below
         if (notEmpty)
         {
