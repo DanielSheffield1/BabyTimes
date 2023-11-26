@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.service.autofill.Dataset
+import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
@@ -47,12 +48,14 @@ class Sleep : AppCompatActivity() {
         //accepts user input and subtracts TimeAsleep from TimeWakeUp
         timeAsleep = findViewById(R.id.editTextTime3)
         timeWakeUp = findViewById(R.id.editTextTime2)
-        var numAsleep = timeAsleep.text.toString().toFloat()
-        var numWakeUp = timeWakeUp.text.toString().toFloat()
-        val result = numWakeUp - numAsleep
-        fridayHrs = fridayHrs.plus(result)
-        //Call getBarChartData to update the chart
-        getBarChartData(fridayHrs)
+        if (!TextUtils.isEmpty(timeAsleep.getText()) && !TextUtils.isEmpty(timeWakeUp.getText())) {
+            var numAsleep = timeAsleep.text.toString().toFloat()
+            var numWakeUp = timeWakeUp.text.toString().toFloat()
+            val result = numWakeUp - numAsleep
+            fridayHrs = fridayHrs.plus(result)
+            //Call getBarChartData to update the chart
+            getBarChartData(fridayHrs)
+        }
     }
     //Click listener that will navigate to main menu page when button (from layout) is clicked. Also requires activity entry in manifest
     fun mainMenu(view: View) {
